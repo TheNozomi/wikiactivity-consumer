@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GlobalModule } from './shared/global.module';
 import { HealthModule } from './health/health.module';
+import { WikisModule } from './wikis/wikis.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { HealthModule } from './health/health.module';
       useFactory: (config: ConfigService) => config.get('database'),
     }),
     HealthModule,
+    WikisModule,
   ],
   controllers: [AppController],
   providers: [AppService],

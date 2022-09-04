@@ -7,6 +7,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    depends_on:
+      - app-db
+      - ws
 
   app-db:
     image: postgres:14-alpine
@@ -38,9 +41,3 @@ services:
     ports:
       - 6379:6379
     command: redis-server --requirepass chaeyoung
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
