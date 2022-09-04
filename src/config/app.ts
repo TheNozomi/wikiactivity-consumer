@@ -1,5 +1,7 @@
 export default () => ({
   app: {
-    port: process.env.PORT,
+    name: 'NestJS Starter',
+    description: 'NestJS Starter',
+    port: parseInt(process.env.PORT, 10),
   },
 });
