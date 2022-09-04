@@ -42,3 +42,10 @@ lerna-debug.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Environment variables
+.env
+.env.local
+
+# Data files
+data/*
