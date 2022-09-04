@@ -55,6 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.23.0"],\
             ["eslint-config-prettier", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:8.5.0"],\
             ["eslint-plugin-prettier", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:4.2.1"],\
+            ["helmet", "npm:6.0.0"],\
             ["husky", "npm:8.0.1"],\
             ["jest", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:28.1.3"],\
             ["lint-staged", "npm:13.0.3"],\
@@ -5716,6 +5717,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["helmet", [\
+        ["npm:6.0.0", {\
+          "packageLocation": "../../.yarn/berry/cache/helmet-npm-6.0.0-2285459f57-8.zip/node_modules/helmet/",\
+          "packageDependencies": [\
+            ["helmet", "npm:6.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["hexoid", [\
         ["npm:1.0.0", {\
           "packageLocation": "../../.yarn/berry/cache/hexoid-npm-1.0.0-2274609209-8.zip/node_modules/hexoid/",\
@@ -10339,6 +10349,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.23.0"],\
             ["eslint-config-prettier", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:8.5.0"],\
             ["eslint-plugin-prettier", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:4.2.1"],\
+            ["helmet", "npm:6.0.0"],\
             ["husky", "npm:8.0.1"],\
             ["jest", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:28.1.3"],\
             ["lint-staged", "npm:13.0.3"],\
