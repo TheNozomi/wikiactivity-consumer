@@ -4,6 +4,7 @@ import { IoClientModule } from 'nestjs-io-client';
 import { WikisModule } from '../wikis/wikis.module';
 import { WikiActivityService } from './services/wikiactivity.service';
 import { WikiSubscriber } from './subscribers/wiki.subscriber';
+import { ConsumerHealthIndicator } from './consumer.health';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { WikiSubscriber } from './subscribers/wiki.subscriber';
     }),
     WikisModule,
   ],
-  providers: [WikiActivityService, WikiSubscriber],
+  providers: [WikiActivityService, WikiSubscriber, ConsumerHealthIndicator],
+  exports: [WikiActivityService, ConsumerHealthIndicator],
 })
 export class WikiActivityModule {}

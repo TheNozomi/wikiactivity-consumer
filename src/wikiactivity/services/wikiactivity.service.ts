@@ -11,6 +11,12 @@ import {
   OnConnectError,
   EventListener,
 } from 'nestjs-io-client';
+import {
+  createActivityItem,
+  type DiscussionsPostResponse,
+  type LogEventsResponse,
+  type RecentChangesResponse,
+} from '@bitomic/wikiactivity-api';
 
 import { WikisService } from '../../wikis/services/wikis.service';
 
@@ -44,13 +50,22 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
   }
 
   @EventListener('activity')
-  message(data: any) {
-    console.log(data);
+  message(
+    data: DiscussionsPostResponse | LogEventsResponse | RecentChangesResponse,
+  ) {
+    console.log(createActivityItem(data));
   }
 
   subscribeToWiki(interwiki: string) {
     this.logger.log(`Subscribing to wiki: ${interwiki}`);
     this.io.send('join', [interwiki]);
+  }
+
+  public getHealth() {
+    return {
+      consumerReady: this.io.connected,
+      connectionId: this.io.id,
+    };
   }
 
   onModuleInit() {

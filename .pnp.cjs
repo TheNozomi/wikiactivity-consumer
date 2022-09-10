@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@bitomic/wikiactivity-api", "npm:1.1.4"],\
             ["@commitlint/cli", "npm:17.1.2"],\
             ["@commitlint/config-conventional", "npm:17.1.0"],\
             ["@nestjs/axios", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:0.1.0"],\
@@ -60,6 +61,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:8.0.1"],\
             ["jest", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:28.1.3"],\
             ["lint-staged", "npm:13.0.3"],\
+            ["mw.js", "npm:3.0.0"],\
             ["nestjs-io-client", "npm:0.1.0"],\
             ["pg", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:8.8.0"],\
             ["prettier", "npm:2.7.1"],\
@@ -944,6 +946,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../.yarn/berry/cache/@bcoe-v8-coverage-npm-0.2.3-9e27b3c57e-8.zip/node_modules/@bcoe/v8-coverage/",\
           "packageDependencies": [\
             ["@bcoe/v8-coverage", "npm:0.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@bitomic/wikiactivity-api", [\
+        ["npm:1.1.4", {\
+          "packageLocation": "../../.yarn/berry/cache/@bitomic-wikiactivity-api-npm-1.1.4-72d98e1d3a-8.zip/node_modules/@bitomic/wikiactivity-api/",\
+          "packageDependencies": [\
+            ["@bitomic/wikiactivity-api", "npm:1.1.4"],\
+            ["mw.js", "npm:2.4.1"],\
+            ["ts-dotenv", "npm:0.8.3"],\
+            ["undici", "npm:5.10.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2092,7 +2106,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nuxtjs/opencollective", "npm:0.3.2"],\
             ["chalk", "npm:4.1.2"],\
             ["consola", "npm:2.15.3"],\
-            ["node-fetch", "virtual:72db6b3551c1b46986e711aee96d1643b26ff6991672401c35442adfbef36d10ccd9289b58e518aac04afe4e688ca4b130da9fae9c1c040113a2585b8cfeea9a#npm:2.6.7"]\
+            ["node-fetch", "virtual:e0765f536d0d82b1f4de6bc5646de9087a5f52290c72e5ba74ae33fd3d935790d5bff1806b87332d788657c382468cf20bbd5f74551a923d368d3a25b59f4f7d#npm:2.6.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7587,6 +7601,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["mw.js", [\
+        ["npm:2.4.1", {\
+          "packageLocation": "../../.yarn/berry/cache/mw.js-npm-2.4.1-e0765f536d-8.zip/node_modules/mw.js/",\
+          "packageDependencies": [\
+            ["mw.js", "npm:2.4.1"],\
+            ["form-data", "npm:4.0.0"],\
+            ["fs-extra", "npm:10.1.0"],\
+            ["node-fetch", "virtual:e0765f536d0d82b1f4de6bc5646de9087a5f52290c72e5ba74ae33fd3d935790d5bff1806b87332d788657c382468cf20bbd5f74551a923d368d3a25b59f4f7d#npm:2.6.7"],\
+            ["tmp-promise", "npm:3.0.3"],\
+            ["tough-cookie", "npm:4.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "../../.yarn/berry/cache/mw.js-npm-3.0.0-4ef3d5c430-8.zip/node_modules/mw.js/",\
+          "packageDependencies": [\
+            ["mw.js", "npm:3.0.0"],\
+            ["fs-extra", "npm:10.1.0"],\
+            ["tmp-promise", "npm:3.0.3"],\
+            ["tough-cookie", "npm:4.1.2"],\
+            ["undici", "npm:5.10.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["mz", [\
         ["npm:2.7.0", {\
           "packageLocation": "../../.yarn/berry/cache/mz-npm-2.7.0-ec3cef4ec2-8.zip/node_modules/mz/",\
@@ -7663,10 +7702,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72db6b3551c1b46986e711aee96d1643b26ff6991672401c35442adfbef36d10ccd9289b58e518aac04afe4e688ca4b130da9fae9c1c040113a2585b8cfeea9a#npm:2.6.7", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-5779e0c4c3/3/.yarn/berry/cache/node-fetch-npm-2.6.7-777aa2a6df-8.zip/node_modules/node-fetch/",\
+        ["virtual:e0765f536d0d82b1f4de6bc5646de9087a5f52290c72e5ba74ae33fd3d935790d5bff1806b87332d788657c382468cf20bbd5f74551a923d368d3a25b59f4f7d#npm:2.6.7", {\
+          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-70375e66af/3/.yarn/berry/cache/node-fetch-npm-2.6.7-777aa2a6df-8.zip/node_modules/node-fetch/",\
           "packageDependencies": [\
-            ["node-fetch", "virtual:72db6b3551c1b46986e711aee96d1643b26ff6991672401c35442adfbef36d10ccd9289b58e518aac04afe4e688ca4b130da9fae9c1c040113a2585b8cfeea9a#npm:2.6.7"],\
+            ["node-fetch", "virtual:e0765f536d0d82b1f4de6bc5646de9087a5f52290c72e5ba74ae33fd3d935790d5bff1806b87332d788657c382468cf20bbd5f74551a923d368d3a25b59f4f7d#npm:2.6.7"],\
             ["@types/encoding", null],\
             ["encoding", null],\
             ["whatwg-url", "npm:5.0.0"]\
@@ -8396,6 +8435,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["psl", [\
+        ["npm:1.9.0", {\
+          "packageLocation": "../../.yarn/berry/cache/psl-npm-1.9.0-a546edad1a-8.zip/node_modules/psl/",\
+          "packageDependencies": [\
+            ["psl", "npm:1.9.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["pump", [\
         ["npm:3.0.0", {\
           "packageLocation": "../../.yarn/berry/cache/pump-npm-3.0.0-0080bf6a7a-8.zip/node_modules/pump/",\
@@ -8446,6 +8494,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../.yarn/berry/cache/qs-npm-6.9.3-d8c69297f4-8.zip/node_modules/qs/",\
           "packageDependencies": [\
             ["qs", "npm:6.9.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["querystringify", [\
+        ["npm:2.2.0", {\
+          "packageLocation": "../../.yarn/berry/cache/querystringify-npm-2.2.0-4e77c9f606-8.zip/node_modules/querystringify/",\
+          "packageDependencies": [\
+            ["querystringify", "npm:2.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8623,6 +8680,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../.yarn/berry/cache/require-from-string-npm-2.0.2-8557e0db12-8.zip/node_modules/require-from-string/",\
           "packageDependencies": [\
             ["require-from-string", "npm:2.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["requires-port", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "../../.yarn/berry/cache/requires-port-npm-1.0.0-fd036b488a-8.zip/node_modules/requires-port/",\
+          "packageDependencies": [\
+            ["requires-port", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9607,6 +9673,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["os-tmpdir", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:0.2.1", {\
+          "packageLocation": "../../.yarn/berry/cache/tmp-npm-0.2.1-a9c8d9c0ca-8.zip/node_modules/tmp/",\
+          "packageDependencies": [\
+            ["tmp", "npm:0.2.1"],\
+            ["rimraf", "npm:3.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tmp-promise", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "../../.yarn/berry/cache/tmp-promise-npm-3.0.3-6df4ad8df9-8.zip/node_modules/tmp-promise/",\
+          "packageDependencies": [\
+            ["tmp-promise", "npm:3.0.3"],\
+            ["tmp", "npm:0.2.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["tmpl", [\
@@ -9646,6 +9730,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["tough-cookie", [\
+        ["npm:4.1.2", {\
+          "packageLocation": "../../.yarn/berry/cache/tough-cookie-npm-4.1.2-09068826e1-8.zip/node_modules/tough-cookie/",\
+          "packageDependencies": [\
+            ["tough-cookie", "npm:4.1.2"],\
+            ["psl", "npm:1.9.0"],\
+            ["punycode", "npm:2.1.1"],\
+            ["universalify", "npm:0.2.0"],\
+            ["url-parse", "npm:1.5.10"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["tr46", [\
         ["npm:0.0.3", {\
           "packageLocation": "../../.yarn/berry/cache/tr46-npm-0.0.3-de53018915-8.zip/node_modules/tr46/",\
@@ -9669,6 +9766,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../.yarn/berry/cache/trim-newlines-npm-3.0.1-22f1f216de-8.zip/node_modules/trim-newlines/",\
           "packageDependencies": [\
             ["trim-newlines", "npm:3.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ts-dotenv", [\
+        ["npm:0.8.3", {\
+          "packageLocation": "../../.yarn/berry/cache/ts-dotenv-npm-0.8.3-ed4e0d5baf-8.zip/node_modules/ts-dotenv/",\
+          "packageDependencies": [\
+            ["ts-dotenv", "npm:0.8.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10106,6 +10212,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["undici", [\
+        ["npm:5.10.0", {\
+          "packageLocation": "../../.yarn/berry/cache/undici-npm-5.10.0-e8cef36040-8.zip/node_modules/undici/",\
+          "packageDependencies": [\
+            ["undici", "npm:5.10.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["unique-filename", [\
         ["npm:2.0.1", {\
           "packageLocation": "../../.yarn/berry/cache/unique-filename-npm-2.0.1-183c6c7c2b-8.zip/node_modules/unique-filename/",\
@@ -10127,6 +10242,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["universalify", [\
+        ["npm:0.2.0", {\
+          "packageLocation": "../../.yarn/berry/cache/universalify-npm-0.2.0-9984e61c10-8.zip/node_modules/universalify/",\
+          "packageDependencies": [\
+            ["universalify", "npm:0.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:2.0.0", {\
           "packageLocation": "../../.yarn/berry/cache/universalify-npm-2.0.0-03b8b418a8-8.zip/node_modules/universalify/",\
           "packageDependencies": [\
@@ -10174,6 +10296,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["uri-js", "npm:4.4.1"],\
             ["punycode", "npm:2.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["url-parse", [\
+        ["npm:1.5.10", {\
+          "packageLocation": "../../.yarn/berry/cache/url-parse-npm-1.5.10-64fa2bcd6d-8.zip/node_modules/url-parse/",\
+          "packageDependencies": [\
+            ["url-parse", "npm:1.5.10"],\
+            ["querystringify", "npm:2.2.0"],\
+            ["requires-port", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10396,6 +10529,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["wikiactivity-consumer", "workspace:."],\
+            ["@bitomic/wikiactivity-api", "npm:1.1.4"],\
             ["@commitlint/cli", "npm:17.1.2"],\
             ["@commitlint/config-conventional", "npm:17.1.0"],\
             ["@nestjs/axios", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:0.1.0"],\
@@ -10423,6 +10557,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:8.0.1"],\
             ["jest", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:28.1.3"],\
             ["lint-staged", "npm:13.0.3"],\
+            ["mw.js", "npm:3.0.0"],\
             ["nestjs-io-client", "npm:0.1.0"],\
             ["pg", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:8.8.0"],\
             ["prettier", "npm:2.7.1"],\
