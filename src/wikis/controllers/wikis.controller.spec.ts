@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { WikisController } from './wikis.controller';
-import { WikisService } from '../services/wikis.service';
+import { WikiService } from '../services/wiki.service';
 
 describe('WikisController', () => {
   let controller: WikisController;
@@ -8,7 +8,7 @@ describe('WikisController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [WikisController],
-      providers: [WikisService],
+      providers: [WikiService],
     }).compile();
 
     controller = module.get<WikisController>(WikisController);

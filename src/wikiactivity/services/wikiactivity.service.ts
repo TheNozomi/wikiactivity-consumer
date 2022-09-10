@@ -18,7 +18,8 @@ import {
   type RecentChangesResponse,
 } from '@bitomic/wikiactivity-api';
 
-import { WikisService } from '../../wikis/services/wikis.service';
+import { WebhookService } from '../../webhooks/services/webhook.service';
+import { WikiService } from '../../wikis/services/wiki.service';
 
 @Injectable()
 export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
@@ -27,8 +28,8 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
   constructor(
     @InjectIoClientProvider()
     private readonly io: IoClient,
-
-    private readonly wikisService: WikisService,
+    private readonly webhookService: WebhookService,
+    private readonly wikisService: WikiService,
   ) {}
 
   @OnConnect()

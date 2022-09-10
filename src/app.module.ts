@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 import { GlobalModule } from './shared/global.module';
 import { HealthModule } from './health/health.module';
 import { WikisModule } from './wikis/wikis.module';
-import { WebhookModule } from './webhook/webhook.module';
+import { WebhooksModule } from './webhooks/webhooks.module';
 import { WikiActivityModule } from './wikiactivity/wikiactivity.module';
 
 @Module({
@@ -19,7 +19,7 @@ import { WikiActivityModule } from './wikiactivity/wikiactivity.module';
     }),
     HealthModule,
     WikisModule,
-    WebhookModule,
+    WebhooksModule,
     WikiActivityModule,
   ],
   controllers: [AppController],

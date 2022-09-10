@@ -9,10 +9,10 @@ import { Repository } from 'typeorm';
 import { CreateWikiDto } from '../dto/create-wiki.dto';
 import { UpdateWikiDto } from '../dto/update-wiki.dto';
 import { Wiki } from '../entities/wiki.entity';
-import { Webhook } from '../../webhook/entities/webhook.entity';
+import { Webhook } from '../../webhooks/entities/webhook.entity';
 
 @Injectable()
-export class WikisService {
+export class WikiService {
   constructor(
     @InjectRepository(Wiki)
     private readonly wikisRepository: Repository<Wiki>,

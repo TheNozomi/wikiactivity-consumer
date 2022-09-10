@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Webhook } from '../../webhook/entities/webhook.entity';
+import { Webhook } from '../../webhooks/entities/webhook.entity';
 
 @Entity()
 export class Wiki {

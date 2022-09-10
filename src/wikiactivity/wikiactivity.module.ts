@@ -5,6 +5,7 @@ import { WikisModule } from '../wikis/wikis.module';
 import { WikiActivityService } from './services/wikiactivity.service';
 import { WikiSubscriber } from './subscribers/wiki.subscriber';
 import { ConsumerHealthIndicator } from './consumer.health';
+import { WebhooksModule } from '../webhooks/webhooks.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ConsumerHealthIndicator } from './consumer.health';
         },
       }),
     }),
+    WebhooksModule,
     WikisModule,
   ],
   providers: [WikiActivityService, WikiSubscriber, ConsumerHealthIndicator],

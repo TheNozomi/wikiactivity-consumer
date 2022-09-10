@@ -9,43 +9,43 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { WikisService } from '../services/wikis.service';
+import { WikiService } from '../services/wiki.service';
 import { CreateWikiDto } from '../dto/create-wiki.dto';
 import { UpdateWikiDto } from '../dto/update-wiki.dto';
 
 @Controller('wikis')
 @ApiTags('wikis')
 export class WikisController {
-  constructor(private readonly wikisService: WikisService) {}
+  constructor(private readonly wikiService: WikiService) {}
 
   @Post()
   create(@Body() createWikiDto: CreateWikiDto) {
-    return this.wikisService.create(createWikiDto);
+    return this.wikiService.create(createWikiDto);
   }
 
   @Get()
   findAll() {
-    return this.wikisService.findAll();
+    return this.wikiService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.wikisService.findOne(+id);
+    return this.wikiService.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateWikiDto: UpdateWikiDto) {
-    return this.wikisService.update(+id, updateWikiDto);
+    return this.wikiService.update(+id, updateWikiDto);
   }
 
   @Delete(':id')
   @HttpCode(204)
   remove(@Param('id') id: string) {
-    return this.wikisService.remove(+id);
+    return this.wikiService.remove(+id);
   }
 
   @Get(':id/webhooks')
   findAllWebhooks(@Param('id') id: string) {
-    return this.wikisService.findAllWebhooks(+id);
+    return this.wikiService.findAllWebhooks(+id);
   }
 }
