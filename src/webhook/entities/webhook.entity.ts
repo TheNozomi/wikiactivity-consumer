@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Wiki } from './wiki.entity';
+import { Wiki } from '../../wikis/entities/wiki.entity';
 
 export enum WebhookPlatform {
   DISCORD = 'discord',

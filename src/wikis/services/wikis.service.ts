@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 import { CreateWikiDto } from '../dto/create-wiki.dto';
 import { UpdateWikiDto } from '../dto/update-wiki.dto';
 import { Wiki } from '../entities/wiki.entity';
-import { Webhook } from '../entities/webhook.entity';
+import { Webhook } from '../../webhook/entities/webhook.entity';
 
 @Injectable()
 export class WikisService {
@@ -40,6 +40,10 @@ export class WikisService {
 
   findAll() {
     return this.wikisRepository.find();
+  }
+
+  findAllEnabled() {
+    return this.wikisRepository.findBy({ enabled: true });
   }
 
   async findOne(id: number) {

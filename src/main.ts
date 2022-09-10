@@ -22,6 +22,8 @@ async function bootstrap() {
 
   app.use(helmet());
 
+  app.enableShutdownHooks();
+
   const port = configService.get('app.port', 3000);
   await app.listen(port);
 }

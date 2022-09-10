@@ -10,7 +10,6 @@ export default (): { database: TypeOrmModuleOptions } => ({
     database: process.env.DB_DATABASE,
     entities: [__dirname + '/../**/**/*.entity{.ts,.js}'],
     migrations: [__dirname + '/../db/migrations/*{.ts,.js}'],
-    subscribers: [__dirname + '/../shared/subscribers/*.subscriber{.ts,.js}'],
     synchronize: process.env.TYPEORM_SYNC === 'true',
   },
 });
