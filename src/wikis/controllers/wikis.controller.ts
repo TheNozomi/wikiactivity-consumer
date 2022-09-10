@@ -30,7 +30,7 @@ export class WikisController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.wikiService.findOne(+id);
+    return this.wikiService.findOneById(+id);
   }
 
   @Patch(':id')

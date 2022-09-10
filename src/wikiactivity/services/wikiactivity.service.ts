@@ -29,13 +29,13 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
     @InjectIoClientProvider()
     private readonly io: IoClient,
     private readonly webhookService: WebhookService,
-    private readonly wikisService: WikiService,
+    private readonly wikiService: WikiService,
   ) {}
 
   @OnConnect()
   async connect() {
     this.logger.log(`Connected to ws-wikiactivity - Connection: ${this.io.id}`);
-    const wikis = await this.wikisService.findAllEnabled(),
+    const wikis = await this.wikiService.findAllEnabled(),
       interwikis = wikis.map((wiki) => wiki.interwiki);
     if (interwikis.length) {
       this.logger.log(`Subscribing to wikis: ${interwikis}`);
@@ -51,10 +51,32 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
   }
 
   @EventListener('activity')
-  message(
+  async onActivity(
     data: DiscussionsPostResponse | LogEventsResponse | RecentChangesResponse,
   ) {
-    console.log(createActivityItem(data));
+    try {
+      const item = createActivityItem(data),
+        wiki = await this.wikiService.findOneByInterwiki(item.wiki);
+      // TODO: persist activity item to database
+      this.webhookService.executeWebhooks(wiki, item);
+    } catch (err) {
+      console.error('Error forwarding to webhookService', err);
+    }
+  }
+
+  @EventListener('activity-end')
+  async onActivityEnd(data: any) {
+    this.logger.log('Received activity-end event', data);
+  }
+
+  @EventListener('unreachable-wiki')
+  async onUnreachableWiki(data: any) {
+    this.logger.log('Received unreachable-wiki event', data);
+  }
+
+  @EventListener('rooms')
+  async onRooms(data: any) {
+    this.logger.log('Received rooms event', data);
   }
 
   subscribeToWiki(interwiki: string) {

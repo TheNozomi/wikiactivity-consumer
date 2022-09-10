@@ -46,7 +46,7 @@ export class WikiService {
     return this.wikisRepository.findBy({ enabled: true });
   }
 
-  async findOne(id: number) {
+  async findOneById(id: number) {
     try {
       const wiki = await this.wikisRepository.findOneByOrFail({ id });
       return wiki;
@@ -58,12 +58,26 @@ export class WikiService {
     }
   }
 
+  async findOneByInterwiki(interwiki: string) {
+    try {
+      const wiki = await this.wikisRepository.findOneByOrFail({ interwiki });
+      return wiki;
+    } catch (err) {
+      if (err.name === 'EntityNotFoundError') {
+        throw new NotFoundException(
+          `Wiki with interwiki ${interwiki} not found`,
+        );
+      }
+      throw err;
+    }
+  }
+
   update(id: number, updateWikiDto: UpdateWikiDto) {
     return `This action updates a #${id} wiki`;
   }
 
   async remove(id: number) {
-    const wiki = await this.findOne(id);
+    const wiki = await this.findOneById(id);
     await this.wikisRepository.remove(wiki);
   }
 
