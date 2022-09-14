@@ -1,21 +1,31 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import {
   ActivityItem,
   DiscussionsItem,
   LogEventsItem,
   RecentChangesItem,
 } from '@bitomic/wikiactivity-api';
+import { Repository } from 'typeorm';
 
 import { Wiki } from '../../wikis/entities/wiki.entity';
+import { Webhook } from '../entities/webhook.entity';
 
 @Injectable()
 export class WebhookService {
   private readonly logger = new Logger(WebhookService.name);
 
-  public executeWebhooks(wiki: Wiki, item: ActivityItem) {
+  constructor(
+    @InjectRepository(Webhook)
+    private readonly webhooksRepository: Repository<Webhook>,
+  ) {}
+
+  public async executeWebhooks(wiki: Wiki, item: ActivityItem) {
     console.log(`Executing webhooks for ${wiki.interwiki}...`, item);
 
-    if (!wiki.webhooks?.length) {
+    const webhooks = await this.findAllByWikiId(wiki.id);
+
+    if (!webhooks?.length) {
       this.logger.log(`No webhooks configured for ${wiki.interwiki}`);
       return;
     }
@@ -29,7 +39,7 @@ export class WebhookService {
       return;
     }
 
-    for (const webhook of wiki.webhooks) {
+    for (const webhook of webhooks) {
       this.logger.log(`Executing webhook ${webhook.id} for ${wiki.interwiki}`);
 
       switch (webhook.platform) {
@@ -42,5 +52,9 @@ export class WebhookService {
           continue;
       }
     }
+  }
+
+  public async findAllByWikiId(wikiId: number) {
+    return this.webhooksRepository.findBy({ wikiId });
   }
 }
