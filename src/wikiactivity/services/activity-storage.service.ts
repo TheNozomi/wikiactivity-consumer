@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { DiscussionsItem, RecentChangesItem } from '@bitomic/wikiactivity-api';
 import { RecentChangesItem as RecentChangesItemEntity } from '../entities/recent-changes-item.entity';
 import { DiscussionsItem as DiscussionsItemEntity } from '../entities/discussions-item.entity';
-import { Wiki } from 'src/wikis/entities/wiki.entity';
+import { Wiki } from '../../wikis/entities/wiki.entity';
 
 @Injectable()
 export class ActivityStorageService {
