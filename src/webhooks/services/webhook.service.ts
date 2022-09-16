@@ -21,8 +21,6 @@ export class WebhookService {
   ) {}
 
   public async executeWebhooks(wiki: Wiki, item: ActivityItem) {
-    console.log(`Executing webhooks for ${wiki.interwiki}...`, item);
-
     const webhooks = await this.findAllByWikiId(wiki.id);
 
     if (!webhooks?.length) {

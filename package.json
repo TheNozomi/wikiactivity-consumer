@@ -24,7 +24,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@bitomic/wikiactivity-api": "^1.1.4",
+    "@bitomic/wikiactivity-api": "^1.2.0",
     "@nestjs/axios": "^0.1.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.2.0",

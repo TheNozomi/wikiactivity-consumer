@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 import { CreateWikiDto } from '../dto/create-wiki.dto';
 import { UpdateWikiDto } from '../dto/update-wiki.dto';
 import { Wiki } from '../entities/wiki.entity';
-import { Webhook } from '../../webhooks/entities/webhook.entity';
+import { WebhookService } from '../../webhooks/services/webhook.service';
 
 @Injectable()
 export class WikiService {
@@ -17,8 +17,7 @@ export class WikiService {
     @InjectRepository(Wiki)
     private readonly wikisRepository: Repository<Wiki>,
 
-    @InjectRepository(Webhook)
-    private readonly webhooksRepository: Repository<Webhook>,
+    private readonly webhookService: WebhookService,
   ) {}
 
   async create(createWikiDto: CreateWikiDto) {
@@ -82,6 +81,6 @@ export class WikiService {
   }
 
   findAllWebhooks(id: number) {
-    return this.webhooksRepository.findBy({ wikiId: id });
+    return this.webhookService.findAllByWikiId(id);
   }
 }

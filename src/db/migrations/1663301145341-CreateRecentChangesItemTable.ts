@@ -19,6 +19,8 @@ export class CreateRecentChangesItemTable1663301145341
         "newlen" INTEGER NULL DEFAULT NULL,
         "old_revid" INTEGER NULL DEFAULT NULL,
         "revid" INTEGER NULL DEFAULT NULL,
+        "minor" BOOLEAN NOT NULL DEFAULT 'false',
+        "new" BOOLEAN NOT NULL DEFAULT 'false',
         "redirect" BOOLEAN NOT NULL DEFAULT 'false',
         "timestamp" TIMESTAMP NOT NULL,
         "comment" VARCHAR NULL DEFAULT NULL,

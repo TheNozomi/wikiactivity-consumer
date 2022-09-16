@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@bitomic/wikiactivity-api", "npm:1.1.4"],\
+            ["@bitomic/wikiactivity-api", "npm:1.2.0"],\
             ["@commitlint/cli", "npm:17.1.2"],\
             ["@commitlint/config-conventional", "npm:17.1.0"],\
             ["@nestjs/axios", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:0.1.0"],\
@@ -951,10 +951,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@bitomic/wikiactivity-api", [\
-        ["npm:1.1.4", {\
-          "packageLocation": "../../.yarn/berry/cache/@bitomic-wikiactivity-api-npm-1.1.4-72d98e1d3a-8.zip/node_modules/@bitomic/wikiactivity-api/",\
+        ["npm:1.2.0", {\
+          "packageLocation": "../../.yarn/berry/cache/@bitomic-wikiactivity-api-npm-1.2.0-6966b67ee8-8.zip/node_modules/@bitomic/wikiactivity-api/",\
           "packageDependencies": [\
-            ["@bitomic/wikiactivity-api", "npm:1.1.4"],\
+            ["@bitomic/wikiactivity-api", "npm:1.2.0"],\
             ["mw.js", "npm:2.4.1"],\
             ["ts-dotenv", "npm:0.8.3"],\
             ["undici", "npm:5.10.0"]\
@@ -10529,7 +10529,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["wikiactivity-consumer", "workspace:."],\
-            ["@bitomic/wikiactivity-api", "npm:1.1.4"],\
+            ["@bitomic/wikiactivity-api", "npm:1.2.0"],\
             ["@commitlint/cli", "npm:17.1.2"],\
             ["@commitlint/config-conventional", "npm:17.1.0"],\
             ["@nestjs/axios", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:0.1.0"],\

@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Wiki } from '../../wikis/entities/wiki.entity';
 
 export enum WebhookPlatform {
@@ -18,11 +24,12 @@ export class Webhook {
   @Column({ name: 'wiki_id', type: 'int' })
   wikiId: number;
 
+  @ManyToOne(() => Wiki, (wiki) => wiki.webhooks, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'wiki_id' })
+  wiki: Wiki;
+
   @Column()
   name: string;
-
-  @ManyToOne(() => Wiki, (wiki) => wiki.webhooks, { onDelete: 'CASCADE' })
-  wiki: Wiki;
 
   @Column()
   enabled: boolean;

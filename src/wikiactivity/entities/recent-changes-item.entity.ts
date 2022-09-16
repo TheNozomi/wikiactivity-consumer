@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
+import { Wiki } from '../../wikis/entities/wiki.entity';
 
 @Entity()
 export class RecentChangesItem {
@@ -7,6 +14,10 @@ export class RecentChangesItem {
 
   @Column({ name: 'wiki_id', type: 'int' })
   wikiId: number;
+
+  @ManyToOne(() => Wiki)
+  @JoinColumn([{ name: 'wiki_id', referencedColumnName: 'id' }])
+  wiki: Wiki;
 
   @Column()
   type: 'edit' | 'new';
@@ -37,6 +48,12 @@ export class RecentChangesItem {
 
   @Column({ type: 'int', nullable: true })
   revid: number;
+
+  @Column({ default: false })
+  minor: boolean;
+
+  @Column({ default: false })
+  new: boolean;
 
   @Column({ default: false })
   redirect: boolean;
