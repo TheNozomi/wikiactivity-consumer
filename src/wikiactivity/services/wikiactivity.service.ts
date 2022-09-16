@@ -18,6 +18,7 @@ import {
   type RecentChangesResponse,
 } from '@bitomic/wikiactivity-api';
 
+import { ActivityStorageService } from './activity-storage.service';
 import { WebhookService } from '../../webhooks/services/webhook.service';
 import { WikiService } from '../../wikis/services/wiki.service';
 
@@ -28,6 +29,7 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
   constructor(
     @InjectIoClientProvider()
     private readonly io: IoClient,
+    private readonly activityStorageService: ActivityStorageService,
     private readonly webhookService: WebhookService,
     private readonly wikiService: WikiService,
   ) {}
@@ -55,9 +57,18 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
     data: DiscussionsPostResponse | LogEventsResponse | RecentChangesResponse,
   ) {
     try {
+      console.log('data', JSON.stringify(data));
+
       const item = createActivityItem(data),
         wiki = await this.wikiService.findOneByInterwiki(item.wiki);
+      console.log(wiki, item);
       // TODO: persist activity item to database
+      if (item.isRecentChanges()) {
+        await this.activityStorageService.saveRecentChangesItem(wiki, item);
+      } else {
+        this.logger.log('Unsupported activity item type');
+      }
+
       this.webhookService.executeWebhooks(wiki, item);
     } catch (err) {
       console.error('Error forwarding to webhookService', err);

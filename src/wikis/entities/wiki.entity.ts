@@ -9,6 +9,9 @@ export class Wiki {
   @Column({ unique: true })
   interwiki: string;
 
+  @Column({ name: 'display_name' })
+  displayName: string;
+
   @Column({ default: true })
   enabled: boolean;
 

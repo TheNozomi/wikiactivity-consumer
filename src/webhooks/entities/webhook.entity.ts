@@ -15,7 +15,7 @@ export class Webhook {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'int' })
+  @Column({ name: 'wiki_id', type: 'int' })
   wikiId: number;
 
   @Column()
