@@ -9,6 +9,7 @@ import { ConsumerHealthIndicator } from './consumer.health';
 import { WebhooksModule } from '../webhooks/webhooks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RecentChangesItem } from './entities/recent-changes-item.entity';
+import { DiscussionsItem } from './entities/discussions-item.entity';
 
 @Module({
   imports: [
@@ -21,7 +22,7 @@ import { RecentChangesItem } from './entities/recent-changes-item.entity';
         },
       }),
     }),
-    TypeOrmModule.forFeature([RecentChangesItem]),
+    TypeOrmModule.forFeature([RecentChangesItem, DiscussionsItem]),
     WebhooksModule,
     WikisModule,
   ],

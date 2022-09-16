@@ -62,14 +62,17 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
       const item = createActivityItem(data),
         wiki = await this.wikiService.findOneByInterwiki(item.wiki);
       console.log(wiki, item);
-      // TODO: persist activity item to database
-      if (item.isRecentChanges()) {
-        await this.activityStorageService.saveRecentChangesItem(wiki, item);
-      } else {
-        this.logger.log('Unsupported activity item type');
-      }
+      if (wiki.enabled) {
+        if (item.isRecentChanges()) {
+          await this.activityStorageService.saveRecentChangesItem(wiki, item);
+        } else if (item.isDiscussions()) {
+          await this.activityStorageService.saveDiscussionsItem(wiki, item);
+        } else {
+          this.logger.log('Unsupported activity item type');
+        }
 
-      this.webhookService.executeWebhooks(wiki, item);
+        this.webhookService.executeWebhooks(wiki, item);
+      }
     } catch (err) {
       console.error('Error forwarding to webhookService', err);
     }
