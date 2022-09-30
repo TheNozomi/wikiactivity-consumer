@@ -9,4 +9,15 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('log-error')
+  logError() {
+    this.appService.logError();
+    return { message: 'Logged error' };
+  }
+
+  @Get('explode')
+  explode() {
+    throw new Error('Boom!');
+  }
 }

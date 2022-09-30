@@ -57,11 +57,11 @@ export class WikiActivityService implements OnModuleDestroy, OnModuleInit {
     data: DiscussionsPostResponse | LogEventsResponse | RecentChangesResponse,
   ) {
     try {
-      console.log('data', JSON.stringify(data));
+      this.logger.log('data', data);
 
       const item = createActivityItem(data),
         wiki = await this.wikiService.findOneByInterwiki(item.wiki);
-      console.log(wiki, item);
+      this.logger.log({ wiki, item });
       if (wiki.enabled) {
         if (item.isRecentChanges()) {
           await this.activityStorageService.saveRecentChangesItem(wiki, item);
