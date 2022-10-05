@@ -1,11 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import {
-  ActivityItem,
-  DiscussionsItem,
-  LogEventsItem,
-  RecentChangesItem,
-} from '@bitomic/wikiactivity-api';
+import { ActivityItem } from '@bitomic/wikiactivity-api';
 import { Repository } from 'typeorm';
 
 import { Wiki } from '../../wikis/entities/wiki.entity';
@@ -13,7 +8,8 @@ import { Webhook } from '../entities/webhook.entity';
 
 @Injectable()
 export class WebhookService {
-  private readonly logger = new Logger(WebhookService.name);
+  // private readonly logger = new Logger(WebhookService.name);
+  private readonly logger = console;
 
   constructor(
     @InjectRepository(Webhook)
@@ -28,11 +24,7 @@ export class WebhookService {
       return;
     }
 
-    if (
-      !(item instanceof DiscussionsItem) &&
-      !(item instanceof LogEventsItem) &&
-      !(item instanceof RecentChangesItem)
-    ) {
+    if (!this.isSupportedType(item)) {
       this.logger.warn('Unsupported ActivityItem', item);
       return;
     }
@@ -54,5 +46,9 @@ export class WebhookService {
 
   public async findAllByWikiId(wikiId: number) {
     return this.webhooksRepository.findBy({ wikiId });
+  }
+
+  public isSupportedType(item: ActivityItem) {
+    return item.isRecentChanges() || item.isLogEvents() || item.isDiscussions();
   }
 }

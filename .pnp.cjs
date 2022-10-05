@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@bitomic/wikiactivity-api", "npm:1.2.0"],\
             ["@commitlint/cli", "npm:17.1.2"],\
             ["@commitlint/config-conventional", "npm:17.1.0"],\
+            ["@golevelup/ts-jest", "npm:0.3.3"],\
             ["@nestjs/axios", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:0.1.0"],\
             ["@nestjs/cli", "npm:9.1.1"],\
             ["@nestjs/common", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:9.0.11"],\
@@ -1229,6 +1230,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../.yarn/berry/cache/@gar-promisify-npm-1.1.3-ac1a325862-8.zip/node_modules/@gar/promisify/",\
           "packageDependencies": [\
             ["@gar/promisify", "npm:1.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@golevelup/ts-jest", [\
+        ["npm:0.3.3", {\
+          "packageLocation": "../../.yarn/berry/cache/@golevelup-ts-jest-npm-0.3.3-5d675102e6-8.zip/node_modules/@golevelup/ts-jest/",\
+          "packageDependencies": [\
+            ["@golevelup/ts-jest", "npm:0.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11054,6 +11064,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@bitomic/wikiactivity-api", "npm:1.2.0"],\
             ["@commitlint/cli", "npm:17.1.2"],\
             ["@commitlint/config-conventional", "npm:17.1.0"],\
+            ["@golevelup/ts-jest", "npm:0.3.3"],\
             ["@nestjs/axios", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:0.1.0"],\
             ["@nestjs/cli", "npm:9.1.1"],\
             ["@nestjs/common", "virtual:3cfc51d2c5daed22fe5d485ef91441f74a277fc95b1183131c6241c365e253381e0797c839477f4cc20f8916c30781cfe6f7a1caec2d3de6dc3e7c30b4368a06#npm:9.0.11"],\

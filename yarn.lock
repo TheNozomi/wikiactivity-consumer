@@ -728,6 +728,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@golevelup/ts-jest@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "@golevelup/ts-jest@npm:0.3.3"
+  checksum: be7f2258f349e480f7a8537321743349e3b39d8fdf9dad8d93de296f0fbbb7e2891fb29872fad0aca1f973a7726fd89fba235082ef127c2cfcd1865837595bd5
+  languageName: node
+  linkType: hard
+
 "@grpc/grpc-js@npm:^1.5.5":
   version: 1.7.1
   resolution: "@grpc/grpc-js@npm:1.7.1"
@@ -8893,6 +8900,7 @@ __metadata:
     "@bitomic/wikiactivity-api": ^1.2.0
     "@commitlint/cli": ^17.1.2
     "@commitlint/config-conventional": ^17.1.0
+    "@golevelup/ts-jest": ^0.3.3
     "@nestjs/axios": ^0.1.0
     "@nestjs/cli": ^9.0.0
     "@nestjs/common": ^9.0.0
